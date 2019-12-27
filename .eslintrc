@@ -1,0 +1,16 @@
+{
+  "extends": "airbnb",
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "linebreak-style": 0,
+    "no-plusplus": 0,
+    "arrow-parens": 0
+  }
+}

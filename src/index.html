@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>图书封面编辑器</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+  <body>
+    <div class="container">
+      <div class="container__view">
+        <canvas id="canvas"></canvas>
+        <div class="view__preview"></div>
+        <button type="button" class="download btn btn-primary mt-3 mb-5">下载封面</button>
+      </div>
+      <div class="container__control">
+        <form>
+          <div class="form-group row">
+            <label for="inputName" class="col-sm-4 col-form-label">文字</label>
+            <div class="col-sm-8">
+              <button type="button" class="btn-add-text btn btn-primary btn-sm">添加文本</button>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="upload" class="col-sm-4 col-form-label">背景图片</label>
+            <div class="custom-file col-sm-8">
+              <input type="file" class="upload form-control-file" id="upload" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label">背景颜色</label>
+            <div class="col-sm-8">
+              <button class="colorPicker bg-colorPicker"></button>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label">文字颜色</label>
+            <div class="col-sm-8">
+              <button class="colorPicker font-colorPicker"></button>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label">字体</label>
+            <div class="col-sm-4">
+              <select class="select-font-family custom-select">
+                <optgroup id="localFont" label="本地">
+                  <option selected value="Arial">默认</option>
+                </optgroup>
+                <optgroup label="内置">
+                  <option value="sans-serif">sans-serif</option>
+                  <option value="serif">serif</option>
+                  <option value="cursive" style="font-family: cursive;">楷体</option>
+                  <option value="TrebuchetMS">Trebuchet MS</option>
+                  <option value="serif" style="font-family: serif;">宋体</option>
+                  <option value="Century">Century</option>
+                  <option value="Tahoma">Tahoma</option>
+                  <option value="monospace">monospace</option>
+                  <option value="LucidaConsole">Lucida Console</option>
+                  <option value="simsun">simsun</option>
+                  <option value="CenturyGothic">Century Gothic</option>
+                  <option value="fantasy">fantasy</option>
+                  <option value="Courier">Courier</option>
+                  <option value="Georgia">Georgia</option>
+                  <option value="Impact">Impact</option>
+                </optgroup>
+              </select>
+              <input name="上传本地字体" type="file" class="upload-font form-control-file" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="formGroupFontSizeInput" class="col-sm-4 col-form-label" title="值越大输出图片越大, 越清晰">字体大小 (px)</label>
+            <div class="col-sm-3">
+              <input type="number" class="form-control" value="16" min="10" max="1200" step="1" id="formGroupFontSizeInput" placeholder="16" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-5 col-form-label" title="值越大输出图片越大, 越清晰">输出宽度</label>
+            <div class="col-sm-7">
+              <input type="range" class="custom-range" value="600" min="300" max="1200" step="50" data-type="width" />
+              <span>600</span> px
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-5 col-form-label" title="值越大输出图片越大, 越清晰">输出画质</label>
+            <div class="col-sm-7">
+              <input type="range" class="custom-range" value="0.9" min="0" max="1" step="0.1" data-type="quality" />
+              <span>0.9</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.15.0/umd/popper.js"></script>
+    <script src="http://furuzix.top/cover-generator-browser/cropper.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
