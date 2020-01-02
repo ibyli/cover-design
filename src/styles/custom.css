@@ -6,3 +6,16 @@ body {
   margin-right: 0;
   margin-left: 0;
 }
+
+.custom-file {
+  position: relative;
+}
+.upload,
+.upload-font {
+  opacity: 0;
+  position: absolute;
+}
+
+.btn-upload-font {
+  margin-top: 10px;
+}

@@ -28,31 +28,34 @@
       <div class="container__control">
         <form>
           <div class="form-group row">
-            <label for="inputName" class="col-sm-4 col-form-label">文字</label>
+            <label for="inputName" class="col-sm-3 col-form-label">文字</label>
             <div class="col-sm-8">
               <button type="button" class="btn-add-text btn btn-primary btn-sm">添加文本</button>
             </div>
           </div>
           <div class="form-group row">
-            <label for="upload" class="col-sm-4 col-form-label">背景图片</label>
+            <label for="upload" class="col-sm-3 col-form-label">背景图片</label>
             <div class="custom-file col-sm-8">
               <input type="file" class="upload form-control-file" id="upload" />
+              <button type="button" class="btn-upload btn btn-primary btn-sm">
+                上传图片
+              </button>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-4 col-form-label">背景颜色</label>
+            <label class="col-sm-3 col-form-label">背景颜色</label>
             <div class="col-sm-8">
               <button class="colorPicker bg-colorPicker"></button>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-4 col-form-label">文字颜色</label>
+            <label class="col-sm-3 col-form-label">文字颜色</label>
             <div class="col-sm-8">
               <button class="colorPicker font-colorPicker"></button>
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-4 col-form-label">字体</label>
+            <label class="col-sm-3 col-form-label">字体</label>
             <div class="col-sm-4">
               <select class="select-font-family custom-select">
                 <optgroup id="localFont" label="本地">
@@ -77,23 +80,26 @@
                 </optgroup>
               </select>
               <input name="上传本地字体" type="file" class="upload-font form-control-file" />
+              <button type="button" class="btn-upload-font btn btn-primary btn-sm">
+                上传本地字体
+              </button>
             </div>
           </div>
           <div class="form-group row">
-            <label for="formGroupFontSizeInput" class="col-sm-4 col-form-label" title="值越大输出图片越大, 越清晰">字体大小 (px)</label>
+            <label for="formGroupFontSizeInput" class="col-sm-3 col-form-label" title="值越大输出图片越大, 越清晰">字体大小 (px)</label>
             <div class="col-sm-3">
               <input type="number" class="form-control" value="16" min="10" max="1200" step="1" id="formGroupFontSizeInput" placeholder="16" />
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-5 col-form-label" title="值越大输出图片越大, 越清晰">输出宽度</label>
+            <label class="col-sm-3 col-form-label" title="值越大输出图片越大, 越清晰">输出宽度</label>
             <div class="col-sm-7">
               <input type="range" class="custom-range" value="600" min="300" max="1200" step="50" data-type="width" />
               <span>600</span> px
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-5 col-form-label" title="值越大输出图片越大, 越清晰">输出画质</label>
+            <label class="col-sm-3 col-form-label" title="值越大输出图片越大, 越清晰">输出画质</label>
             <div class="col-sm-7">
               <input type="range" class="custom-range" value="0.9" min="0" max="1" step="0.1" data-type="quality" />
               <span>0.9</span>
